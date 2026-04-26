@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "m0d1fier",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-st-nucleo-c031c6",
+      "id": "nucleo",
+      "top": 164.03,
+      "left": -96.98,
+      "attrs": {}
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 253.42, "left": 213.52, "attrs": {} }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "imu1:VCC", "nucleo:3V3.2", "red", [ "v0" ] ],
+    [ "imu1:GND", "nucleo:GND.2", "black", [ "v0" ] ],
+    [ "imu1:SDA", "nucleo:D14", "green", [ "v-48", "h-19.12" ] ],
+    [ "nucleo:D15", "imu1:SCL", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
